@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-image: linear-gradient(120deg, #3ea2ff 0%, #5a0283 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
+}
+header {
+  font-size: 2rem;
+}
+
+header,
+form {
+  min-height: 20vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+  color: #5237eb;
+}
+
+form button {
+  color: #5237eb;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #5237eb;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.background-img {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+.date {
+  margin: 0.5rem;
+  background: rgb(84, 248, 125);
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.overdue{
+  background: rgb(248, 84, 84);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.agenda-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.agenda-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.agenda {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.filter-agenda {
+  padding: 1rem;
+}
+
+.agenda li {
+  flex: 1;
+}
+
+.delete-btn,
+.finish-btn,
+.tag-btn,
+.timer-btn {
+  background: #7e2276;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.finish-btn {
+  background: rgb(105, 182, 233);
+}
+.tag-btn{
+  background: rgb(82, 65, 241);
+}
+.timer-btn{
+  background: rgb(231, 154, 247);
+}
+
+.agenda-item {
+  padding: 0rem 0.5rem;
+  color: #5237eb;
+}
+
+.fa-trash,
+.fa-check,
+.fa-calendar-day,
+.fa-tag {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.finished {
+  text-decoration: line-through;
+  background: #3ea2ff;
+  opacity: 0.5;
+}
+
+.date-picker{
+  padding: 0px;
+  width:0px;
+  overflow: hidden;
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #5237eb;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #5237eb;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
