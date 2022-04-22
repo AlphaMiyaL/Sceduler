@@ -49,7 +49,7 @@ const AgendaList = ({agendas, setAgendas, filter}) => {
         let parsedDate = new Date();
         parsedDate.setFullYear(parseInt(agenda.date.substring(0,5)));
         parsedDate.setMonth(parseInt(agenda.date.substring(6,8))-1);
-        parsedDate.setDate(parseInt(agenda.date.substring(8,10)));
+        parsedDate.setDate(parseInt(agenda.date.substring(8,10))-1);
         agendaLocal.date = parsedDate;
         setAgendas(agendas => [...agendas, {text: agenda.text, finished: agenda.finished, date: parsedDate, id:agenda.id}]);
       }
